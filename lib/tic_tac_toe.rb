@@ -10,11 +10,18 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, index, player)
   board[index.to_i] = player
 end
 
 
+=======
+def move(board, index, playertoken)
+  board[index] = current_player
+end
+
+>>>>>>> 37f18c3ff7f31bd38705fd4b0ebba2f930087680
 def position_taken?(board, location)
   board[location] != " " && board[location] != ""
 end
@@ -25,6 +32,7 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
+<<<<<<< HEAD
   #get the user input
   user_input = gets.strip
   #input to index
@@ -41,6 +49,18 @@ def turn(board)
     turn(board)
   end
   display_board(board)
+=======
+  input = gets.strip
+  index = input_to_index(input)
+  valid = valid_move?(board, input)
+  if valid == true
+    move(board, index, token)
+    display_board(board)
+  else
+    puts "Please enter 1-9:"
+    input = gets.strip
+  end
+>>>>>>> 37f18c3ff7f31bd38705fd4b0ebba2f930087680
 end
 
 
@@ -48,6 +68,17 @@ end
 
 # Define your play method below
 
+<<<<<<< HEAD
+=======
+def play(board)
+  turns = 0
+  until turns == 9
+    turn(board)
+    turns += 1
+  end
+end
+
+>>>>>>> 37f18c3ff7f31bd38705fd4b0ebba2f930087680
 
 
 def turn_count(board)
@@ -126,6 +157,7 @@ def winner(board)
   end
 end
 
+<<<<<<< HEAD
 
 def play(board)
   while !(over?(board))
@@ -138,4 +170,6 @@ def play(board)
       puts "Cat's Game!"
     end
 end
+=======
+>>>>>>> 37f18c3ff7f31bd38705fd4b0ebba2f930087680
   
